@@ -1,5 +1,4 @@
 import { useEditor, EditorContent } from '@tiptap/react';
-import { BubbleMenu } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
 import Highlight from '@tiptap/extension-highlight';
@@ -319,43 +318,6 @@ export function TipTapEditor({
           <Redo className="w-4 h-4" />
         </ToolbarButton>
       </div>
-      
-      {/* Bubble Menu */}
-      {editor && (
-        <BubbleMenu 
-          editor={editor} 
-          tippyOptions={{ duration: 100 }}
-          className="flex items-center gap-0.5 p-1 bg-popover border border-border rounded-lg shadow-lg"
-        >
-          <ToolbarButton
-            onClick={() => editor.chain().focus().toggleBold().run()}
-            active={editor.isActive('bold')}
-          >
-            <Bold className="w-3.5 h-3.5" />
-          </ToolbarButton>
-          <ToolbarButton
-            onClick={() => editor.chain().focus().toggleItalic().run()}
-            active={editor.isActive('italic')}
-          >
-            <Italic className="w-3.5 h-3.5" />
-          </ToolbarButton>
-          <ToolbarButton
-            onClick={() => editor.chain().focus().toggleUnderline().run()}
-            active={editor.isActive('underline')}
-          >
-            <UnderlineIcon className="w-3.5 h-3.5" />
-          </ToolbarButton>
-          <ToolbarButton
-            onClick={() => editor.chain().focus().toggleHighlight().run()}
-            active={editor.isActive('highlight')}
-          >
-            <Highlighter className="w-3.5 h-3.5" />
-          </ToolbarButton>
-          <ToolbarButton onClick={setLink} active={editor.isActive('link')}>
-            <LinkIcon className="w-3.5 h-3.5" />
-          </ToolbarButton>
-        </BubbleMenu>
-      )}
       
       {/* Editor Content */}
       <EditorContent 
