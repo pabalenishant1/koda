@@ -32,12 +32,18 @@ export interface Link {
   title: string;
   description: string;
   favicon: string;
+  image: string | null; // OG image
   collection: string | null;
   tags: string[];
   archived: boolean;
+  isVideo: boolean;
+  videoType: 'youtube' | 'vimeo' | null;
+  videoId: string | null;
   createdAt: Date;
   updatedAt: Date;
 }
+
+export type LinkViewMode = 'comfortable' | 'compact' | 'list';
 
 export interface Doc {
   id: string;
